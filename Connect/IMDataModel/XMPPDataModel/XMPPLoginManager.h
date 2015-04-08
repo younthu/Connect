@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 #import "LoginManager.h"
 @interface XMPPLoginManager : LoginManager
-
 @end

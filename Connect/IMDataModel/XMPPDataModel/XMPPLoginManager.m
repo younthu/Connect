@@ -16,10 +16,10 @@
     BOOL            bIsOpen;
 }
 - (void)LoginUser:(NSString *)userName password:(NSString *)password success:(void (^)())success failure:(void (^)(NSError *))failure{
+    self.userStatus = IMUserStatusConnecting;
     [self setupStream];
     
     //从本地取得用户名，密码和服务器地址
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSString *userId =userName;
     NSString *pass = password;
@@ -37,6 +37,7 @@
         if (failure) {
             failure(nil);
         }
+        self.userStatus = IMUserStatusAuthenticationFailed ;
         return;
         
     }
@@ -52,6 +53,7 @@
     NSError *error = nil;
     if (![xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error]) {
         NSLog(@"cant connect %@", server);
+        self.userStatus = IMUserStatusConnectServerFailed;
         return ;
     }
     
@@ -99,7 +101,7 @@
 
 //验证通过
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
-    
+    self.userStatus = IMUserStatusLoggedIn;
     [self goOnline];
 }
 
