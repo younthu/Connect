@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "XMPPLoginManager.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) XMPPLoginManager *loginManager;
 @end
 
 @implementation AppDelegate
@@ -17,6 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.LoginManager = [[XMPPLoginManager alloc]init];
+    self.loginManager.server = @"cache.qinmaohao.com";
+//    self.loginManager.port =o
+    [self.loginManager LoginUser:@"test@cache.qinmaohao.com" password:@"111111" success:^{
+        NSLog(@"Login success!");
+    } failure:^(NSError *error) {
+        NSLog(@"*** Login failed:%@", error);
+    }];
     return YES;
 }
 
