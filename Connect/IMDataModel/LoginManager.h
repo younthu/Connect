@@ -7,22 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef enum : NSUInteger {
-    IMUserStatusOffline,
-    IMUserStatusConnecting,
-    IMUserStatusConnectServerFailed,
-    IMUserStatusConnectedToServer,
-    IMUserStatusAuthenticating,
-    IMUserStatusAuthenticationFailed,
-    IMUserStatusLoggedIn,
-    IMUserStatusAway
-} IMUserStatus;
+#import "IMUser.h"
+
+
 
 @interface LoginManager : NSObject
 @property (strong, retain) NSString *server;
 @property (strong, retain) NSString *port;
-@property (nonatomic) IMUserStatus userStatus;
 
 - (void)disconnect;
-- (void)LoginUser:(NSString*)userName password:(NSString*)password success:(void (^)())success failure:(void(^)(NSError *error))failure;
+- (IMUser*)LoginUser:(NSString*)userName password:(NSString*)password success:(void (^)())success failure:(void(^)(NSError *error))failure;
 @end

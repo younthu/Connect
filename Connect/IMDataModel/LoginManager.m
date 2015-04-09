@@ -9,7 +9,7 @@
 #import "LoginManager.h"
 
 @implementation LoginManager
-- (void)LoginUser:(NSString *)userName password:(NSString *)password success:(void (^)())success failure:(void (^)(NSError *))failure{
+- (IMUser*)LoginUser:(NSString *)userName password:(NSString *)password success:(void (^)())success failure:(void (^)(NSError *))failure{
     @throw @"Implement it in subclass please";
 }
 

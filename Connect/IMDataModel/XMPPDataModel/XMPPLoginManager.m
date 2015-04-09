@@ -8,15 +8,20 @@
 
 #import "XMPPLoginManager.h"
 #import "XMPP.h"
+#import "IMUserManager.h"
+#import "IMMessage.h"
+#import "IMUser.h"
 
 @implementation XMPPLoginManager
 {
     XMPPStream      *xmppStream;
     NSString        *strPassword;
     BOOL            bIsOpen;
+    IMUser          *imUser;
+    IMConnection    *connection;
 }
-- (void)LoginUser:(NSString *)userName password:(NSString *)password success:(void (^)())success failure:(void (^)(NSError *))failure{
-    self.userStatus = IMUserStatusConnecting;
+- (IMUser*)LoginUser:(NSString *)userName password:(NSString *)password success:(void (^)())success failure:(void (^)(NSError *))failure{
+    imUser.userStatus = IMUserStatusConnecting;
     [self setupStream];
     
     //从本地取得用户名，密码和服务器地址
@@ -30,15 +35,15 @@
             success();
         }
         
-        return;
+        return imUser;
     }
     
     if (userId == nil || pass == nil) {
         if (failure) {
             failure(nil);
         }
-        self.userStatus = IMUserStatusAuthenticationFailed ;
-        return;
+        imUser.userStatus = IMUserStatusAuthenticationFailed ;
+        return imUser;
         
     }
     
@@ -53,11 +58,12 @@
     NSError *error = nil;
     if (![xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error]) {
         NSLog(@"cant connect %@", server);
-        self.userStatus = IMUserStatusConnectServerFailed;
-        return ;
+        imUser.userStatus = IMUserStatusConnectServerFailed;
+        return imUser;
     }
     
-    return ;
+    
+    return imUser;
 }
 
 - (void)disconnect{
@@ -77,6 +83,8 @@
 {
     XMPPPresence *presence = [XMPPPresence presence];
     [xmppStream sendElement:presence];
+    connection = [[IMConnection alloc]init];
+    imUser.connection = connection;
     
 }
 
@@ -101,7 +109,7 @@
 
 //验证通过
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
-    self.userStatus = IMUserStatusLoggedIn;
+    imUser.userStatus = IMUserStatusLoggedIn;
     [self goOnline];
 }
 
@@ -117,17 +125,6 @@
 //    NSString *strTime = [Statics getCurrentTime];
     
     if (msg && from) {
-//        MessageVO *aVo = [[MessageVO alloc]init];
-//        aVo.strId = idStr;
-//        aVo.strText = msg;
-//        aVo.strFromUsername = from;
-//        aVo.strToUsername = to;
-//        aVo.msgType = MsgType_Receive;
-//        aVo.strTime = strTime;
-//        
-//        //消息委托(这个后面讲)
-//        //        [self.chatDelegate newMessageReceived:aVo];
-//        self.blockNewMessageReceived(aVo);
         
     }
     
