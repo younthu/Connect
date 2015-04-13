@@ -21,7 +21,7 @@
     self.LoginManager = [[XMPPLoginManager alloc]init];
     self.loginManager.server = @"cache.qinmaohao.com";
 //    self.loginManager.port =o
-    [self.loginManager LoginUser:@"test@cache.qinmaohao.com" password:@"111111" success:^{
+    [self.loginManager LoginUser:@"test2@cache.qinmaohao.com" password:@"111111" success:^{
         NSLog(@"Login success!");
     } failure:^(NSError *error) {
         NSLog(@"*** Login failed:%@", error);

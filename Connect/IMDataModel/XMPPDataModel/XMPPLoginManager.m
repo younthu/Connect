@@ -10,18 +10,25 @@
 #import "XMPP.h"
 #import "IMUserManager.h"
 #import "IMMessage.h"
-#import "IMUser.h"
+#import "XMPPIMUser.h"
+#import "XMPPIMConnection.h"
 
 @implementation XMPPLoginManager
 {
     XMPPStream      *xmppStream;
     NSString        *strPassword;
     BOOL            bIsOpen;
-    IMUser          *imUser;
-    IMConnection    *connection;
+    XMPPIMUser          *imUser;
+    XMPPIMConnection    *connection;
 }
 - (IMUser*)LoginUser:(NSString *)userName password:(NSString *)password success:(void (^)())success failure:(void (^)(NSError *))failure{
+    imUser = [[XMPPIMUser alloc]init];
+    
     imUser.userStatus = IMUserStatusConnecting;
+    imUser.onLoginSucceed  = success;
+    imUser.onLoginFailed   = failure;
+    connection = [[XMPPIMConnection alloc]init];
+    imUser.connection = connection;
     [self setupStream];
     
     //从本地取得用户名，密码和服务器地址
@@ -83,9 +90,12 @@
 {
     XMPPPresence *presence = [XMPPPresence presence];
     [xmppStream sendElement:presence];
-    connection = [[IMConnection alloc]init];
+    connection = [[XMPPIMConnection alloc]init];
     imUser.connection = connection;
-    
+   
+    if (imUser.onLoginSucceed) {
+        imUser.onLoginSucceed();
+    }
 }
 
 //下线
@@ -123,9 +133,10 @@
     NSString *from = [[message attributeForName:@"from"] stringValue];
     NSString *to = [[message attributeForName:@"to"] stringValue];
 //    NSString *strTime = [Statics getCurrentTime];
-    
+    IMMessage *_message = [[IMMessage alloc]init];
     if (msg && from) {
-        
+        XMPPIMConnection *_connection =  connection;
+        [_connection onMessageReceived:_message];
     }
     
 }

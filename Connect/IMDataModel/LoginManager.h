@@ -16,5 +16,18 @@
 @property (strong, retain) NSString *port;
 
 - (void)disconnect;
+/**
+ *  Login user
+ *  
+ *  Login logic should be a completed logic. After login, all messages will be sent/received via IMConnection.
+ *  Every User has its own connection.
+ *
+ *  @param userName <#userName description#>
+ *  @param password <#password description#>
+ *  @param success  <#success description#>
+ *  @param failure  <#failure description#>
+ *
+ *  @return <#return value description#>
+ */
 - (IMUser*)LoginUser:(NSString*)userName password:(NSString*)password success:(void (^)())success failure:(void(^)(NSError *error))failure;
 @end

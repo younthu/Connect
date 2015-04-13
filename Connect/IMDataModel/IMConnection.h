@@ -10,6 +10,6 @@
 @class IMMessage;
 
 @interface IMConnection : NSObject
-@property (nonatomic, strong) IMMessage *latestMessage;
+//@property (nonatomic, strong) IMMessage *latestMessage;
 - (void)sendMessage:(IMMessage*)message success:(void(^)())success failure:(void (^)())failure;
 @end

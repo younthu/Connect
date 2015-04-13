@@ -172,6 +172,8 @@
 		A6E3F8EB1ACB93CD00763E1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6E3F8EA1ACB93CD00763E1E /* Images.xcassets */; };
 		A6E3F8EE1ACB93CD00763E1E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E3F8EC1ACB93CD00763E1E /* LaunchScreen.xib */; };
 		A6E3F8FA1ACB93CD00763E1E /* ConnectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E3F8F91ACB93CD00763E1E /* ConnectTests.m */; };
+		A6E88E5C1ADB94A200D3A038 /* XMPPIMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E88E5B1ADB94A200D3A038 /* XMPPIMUser.m */; };
+		A6E88E5F1ADB94FE00D3A038 /* XMPPIMConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E88E5E1ADB94FE00D3A038 /* XMPPIMConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -519,6 +521,11 @@
 		A6E3F8F31ACB93CD00763E1E /* ConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E3F8F81ACB93CD00763E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E3F8F91ACB93CD00763E1E /* ConnectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectTests.m; sourceTree = "<group>"; };
+		A6E88E5A1ADB94A200D3A038 /* XMPPIMUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMPPIMUser.h; path = IMDataModel/XMPPDataModel/XMPPIMUser.h; sourceTree = "<group>"; };
+		A6E88E5B1ADB94A200D3A038 /* XMPPIMUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMPPIMUser.m; path = IMDataModel/XMPPDataModel/XMPPIMUser.m; sourceTree = "<group>"; };
+		A6E88E5D1ADB94FE00D3A038 /* XMPPIMConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMPPIMConnection.h; path = IMDataModel/XMPPDataModel/XMPPIMConnection.h; sourceTree = "<group>"; };
+		A6E88E5E1ADB94FE00D3A038 /* XMPPIMConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMPPIMConnection.m; path = IMDataModel/XMPPDataModel/XMPPIMConnection.m; sourceTree = "<group>"; };
+		A6E88E601ADB969800D3A038 /* BlockTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockTypes.h; path = IMDataModel/BlockTypes.h; sourceTree = "<group>"; };
 		B28BF234494A0332F1F391CC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ED9B4E7BDE47021B673CE318 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1475,6 +1482,7 @@
 				A60435E51AD66CEA003EA733 /* IMUserManager.m */,
 				A60435E71AD67614003EA733 /* IMMessageManager.h */,
 				A60435E81AD67614003EA733 /* IMMessageManager.m */,
+				A6E88E601ADB969800D3A038 /* BlockTypes.h */,
 			);
 			name = IMDataModel;
 			sourceTree = "<group>";
@@ -1484,6 +1492,10 @@
 			children = (
 				A686B3481AD5062400E26B9A /* XMPPLoginManager.h */,
 				A686B3491AD5062400E26B9A /* XMPPLoginManager.m */,
+				A6E88E5A1ADB94A200D3A038 /* XMPPIMUser.h */,
+				A6E88E5B1ADB94A200D3A038 /* XMPPIMUser.m */,
+				A6E88E5D1ADB94FE00D3A038 /* XMPPIMConnection.h */,
+				A6E88E5E1ADB94FE00D3A038 /* XMPPIMConnection.m */,
 			);
 			name = xmpp;
 			sourceTree = "<group>";
@@ -1757,6 +1769,7 @@
 				A6628FD01AD5299B00EA158B /* XMPPResourceMemoryStorageObject.m in Sources */,
 				A66290011AD5299B00EA158B /* XMPPSoftwareVersion.m in Sources */,
 				A66290121AD5299B00EA158B /* XMPPMessageDeliveryReceipts.m in Sources */,
+				A6E88E5C1ADB94A200D3A038 /* XMPPIMUser.m in Sources */,
 				A6628FC81AD5299B00EA158B /* XMPPGoogleSharedStatus.m in Sources */,
 				A66290311AD5299C00EA158B /* DDTTYLogger.m in Sources */,
 				A662901B1AD5299B00EA158B /* NSXMLElement+XEP_0203.m in Sources */,
@@ -1843,6 +1856,7 @@
 				A6628FB61AD5299B00EA158B /* XMPPXOAuth2Google.m in Sources */,
 				A66290261AD5299C00EA158B /* GCDMulticastDelegate.m in Sources */,
 				A6628FC11AD5299B00EA158B /* XMPPPresence.m in Sources */,
+				A6E88E5F1ADB94FE00D3A038 /* XMPPIMConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
