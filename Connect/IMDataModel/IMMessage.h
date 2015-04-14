@@ -22,4 +22,5 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSDate *sent;
 @property (nonatomic) IMMessageStatus messageStatus;
 @property (nonatomic, strong) IMUser *to;
+@property (nonatomic, strong) NSString *textMessage;
 @end

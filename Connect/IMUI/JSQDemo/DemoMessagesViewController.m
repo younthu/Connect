@@ -18,6 +18,9 @@
 
 #import "DemoMessagesViewController.h"
 #import "DemoMessagesViewController+XMPPDemo.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "IMMessageManager.h"
+#import "IMMessage.h"
 
 
 @implementation DemoMessagesViewController
@@ -78,6 +81,10 @@
      */
     
     [self loginUser:@"" password:@""];
+    [RACObserve([IMMessageManager sharedInstance], unreadMessagesCount) subscribeNext:^(id x) {
+        [self appendLastMessage];
+    }];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -116,7 +123,19 @@
 
 
 #pragma mark - Actions
-
+- (void)appendLastMessage{
+    IMMessage *xmppMessage = [[[IMMessageManager sharedInstance] getAllMessage] lastObject];
+    if (nil == xmppMessage) {
+        return;
+    }
+    JSQMessage *message = [[JSQMessage alloc] initWithSenderId:@"xmpp"
+                                             senderDisplayName:@"xmpp"
+                                                          date:[NSDate date]
+                                                          text:xmppMessage.textMessage];
+        [self.demoData.messages addObject:message];
+    
+    [self finishReceivingMessageAnimated:YES];
+}
 - (void)receiveMessagePressed:(UIBarButtonItem *)sender
 {
     /**

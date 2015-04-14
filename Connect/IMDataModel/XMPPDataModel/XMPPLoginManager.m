@@ -12,6 +12,7 @@
 #import "IMMessage.h"
 #import "XMPPIMUser.h"
 #import "XMPPIMConnection.h"
+#import "IMMessageManager.h"
 
 @implementation XMPPLoginManager
 {
@@ -23,6 +24,7 @@
 }
 - (IMUser*)LoginUser:(NSString *)userName password:(NSString *)password success:(void (^)())success failure:(void (^)(NSError *))failure{
     connection = [[XMPPIMConnection alloc]init];
+    connection.delegateMessageReceiver = [IMMessageManager sharedInstance];
     return [connection loginUser:userName password:password success:success failure:failure];
 }
 

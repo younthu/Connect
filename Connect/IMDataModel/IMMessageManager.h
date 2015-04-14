@@ -8,6 +8,10 @@
 
 #import "IMUser.h"
 
-@interface IMMessageManager : IMUser
+@interface IMMessageManager : NSObject<MessageReceivedDelegate>
++ (instancetype)sharedInstance;
 
+@property (nonatomic)int unreadMessagesCount;
+// FIXME: this is a testing interface, please fix it later.
+- (NSArray*)getAllMessage;
 @end

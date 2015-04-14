@@ -19,8 +19,12 @@
     XMPPIMUser          *imUser;
 }
 
-- (void)onMessageReceived:(IMMessage*)IMMessage{
+- (void)onMessageReceived:(IMMessage*)message{
     NSLog(@"New message received in XMPPIMConnection.");
+    if (nil != self.delegateMessageReceiver) {
+//        self.delegateMessageReceiver
+        [self.delegateMessageReceiver onIMMessageReceived:message];
+    }
 }
 #pragma mark - private methods
 -(void)setupStream
@@ -119,8 +123,9 @@
     NSString *to = [[message attributeForName:@"to"] stringValue];
     //    NSString *strTime = [Statics getCurrentTime];
     IMMessage *_message = [[IMMessage alloc]init];
+    _message.textMessage = msg;
     if (msg && from) {
-        [self onMessageReceived:message];
+        [self onMessageReceived:_message];
     }
     
 }
