@@ -26,6 +26,23 @@
         [self.delegateMessageReceiver onIMMessageReceived:message];
     }
 }
+- (void)sendMessage:(IMMessage *)message success:(void (^)())success failure:(void (^)())failure{
+    NSString *messageStr = message.textMessage;
+    
+    if([messageStr length] > 0)
+    {
+        NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
+        [body setStringValue:messageStr];
+        
+        NSXMLElement *xmessage = [NSXMLElement elementWithName:@"message"];
+        [xmessage addAttributeWithName:@"type" stringValue:@"chat"];
+        [xmessage addAttributeWithName:@"to" stringValue:@"test3@cache.qinmaohao.com"];//FIXME: the user qid should be user id, part of XMPPIMUser
+        [xmessage addChild:body];
+        
+        [xmppStream sendElement:xmessage];
+    }
+}
+
 #pragma mark - private methods
 -(void)setupStream
 {

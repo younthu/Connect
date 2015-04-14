@@ -9,5 +9,5 @@
 #import "DemoMessagesViewController.h"
 
 @interface DemoMessagesViewController (XMPPDemo)
-- (void)loginUser:(NSString*)userName password:(NSString*)password;
+- (IMUser*)loginUser:(NSString*)userName password:(NSString*)password;
 @end

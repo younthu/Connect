@@ -25,4 +25,6 @@ typedef enum : NSUInteger {
 @property (nonatomic) IMConnection *connection;// Please assign connection to user after login or reconnected in login manager. It will be used for sending message
 @property (nonatomic) NSString *userName;
 @property (nonatomic) NSString *userId;
+
+- (void)sendMessage:(IMMessage*)message success:(void (^)())success failure:(void (^)())failure;
 @end

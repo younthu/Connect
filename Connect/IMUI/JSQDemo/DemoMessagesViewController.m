@@ -22,7 +22,9 @@
 #import "IMMessageManager.h"
 #import "IMMessage.h"
 
-
+@interface DemoMessagesViewController()
+@property (nonatomic, strong) IMUser *user;
+@end
 @implementation DemoMessagesViewController
 
 #pragma mark - View lifecycle
@@ -80,7 +82,7 @@
      *  self.inputToolbar.contentView.rightBarButtonItem = custom button or nil to remove
      */
     
-    [self loginUser:@"" password:@""];
+    self.user = [self loginUser:@"" password:@""];
     [RACObserve([IMMessageManager sharedInstance], unreadMessagesCount) subscribeNext:^(id x) {
         [self appendLastMessage];
     }];
@@ -321,7 +323,13 @@
                                                           text:text];
     
     [self.demoData.messages addObject:message];
-    
+    IMMessage *imMessage = [[IMMessage alloc]init];
+    imMessage.textMessage = text;
+    [self.user sendMessage:imMessage success:^{
+        
+    } failure:^{
+        
+    }];
     [self finishSendingMessageAnimated:YES];
 }
 

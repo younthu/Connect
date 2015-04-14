@@ -18,4 +18,5 @@
 
 // TODO: remove this method
 - (IMUser*)loginUser:(NSString*)userId password:(NSString*)password success:(void (^)())success failure:(void (^)())failure;
+
 @end

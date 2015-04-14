@@ -9,5 +9,11 @@
 #import "XMPPIMUser.h"
 
 @implementation XMPPIMUser
-
+- (void)sendMessage:(IMMessage *)message success:(void (^)())success failure:(void (^)())failure{
+   [self.connection sendMessage:message success:^{
+       
+   } failure:^{
+       
+   }];
+}
 @end
