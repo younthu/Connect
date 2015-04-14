@@ -15,6 +15,11 @@
 		A60435E31AD65D1F003EA733 /* IMGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A60435E21AD65D1F003EA733 /* IMGroup.m */; };
 		A60435E61AD66CEA003EA733 /* IMUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A60435E51AD66CEA003EA733 /* IMUserManager.m */; };
 		A60435E91AD67614003EA733 /* IMMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A60435E81AD67614003EA733 /* IMMessageManager.m */; };
+		A63085EA1ADCAEFD006D069A /* DemoMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63085E71ADCAEFD006D069A /* DemoMessagesViewController.m */; };
+		A63085EB1ADCAEFD006D069A /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = A63085E91ADCAEFD006D069A /* DemoModelData.m */; };
+		A63085EE1ADCB201006D069A /* NSUserDefaults+DemoSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = A63085ED1ADCB201006D069A /* NSUserDefaults+DemoSettings.m */; };
+		A63085F11ADCB28D006D069A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63085F01ADCB28D006D069A /* Images.xcassets */; };
+		A63085F41ADCB355006D069A /* DemoMessagesViewController+XMPPDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = A63085F31ADCB355006D069A /* DemoMessagesViewController+XMPPDemo.m */; };
 		A6628FAF1AD5299B00EA158B /* XMPPAnonymousAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A6628E421AD5299B00EA158B /* XMPPAnonymousAuthentication.m */; };
 		A6628FB01AD5299B00EA158B /* XMPPDeprecatedDigestAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A6628E451AD5299B00EA158B /* XMPPDeprecatedDigestAuthentication.m */; };
 		A6628FB11AD5299B00EA158B /* XMPPDeprecatedPlainAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A6628E481AD5299B00EA158B /* XMPPDeprecatedPlainAuthentication.m */; };
@@ -202,6 +207,15 @@
 		A60435E51AD66CEA003EA733 /* IMUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMUserManager.m; sourceTree = "<group>"; };
 		A60435E71AD67614003EA733 /* IMMessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMMessageManager.h; path = IMDataModel/IMMessageManager.h; sourceTree = "<group>"; };
 		A60435E81AD67614003EA733 /* IMMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMMessageManager.m; path = IMDataModel/IMMessageManager.m; sourceTree = "<group>"; };
+		A63085E61ADCAEFD006D069A /* DemoMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoMessagesViewController.h; path = IMUI/JSQDemo/DemoMessagesViewController.h; sourceTree = "<group>"; };
+		A63085E71ADCAEFD006D069A /* DemoMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoMessagesViewController.m; path = IMUI/JSQDemo/DemoMessagesViewController.m; sourceTree = "<group>"; };
+		A63085E81ADCAEFD006D069A /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoModelData.h; path = IMUI/JSQDemo/DemoModelData.h; sourceTree = "<group>"; };
+		A63085E91ADCAEFD006D069A /* DemoModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoModelData.m; path = IMUI/JSQDemo/DemoModelData.m; sourceTree = "<group>"; };
+		A63085EC1ADCB201006D069A /* NSUserDefaults+DemoSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+DemoSettings.h"; path = "IMUI/JSQDemo/NSUserDefaults+DemoSettings.h"; sourceTree = "<group>"; };
+		A63085ED1ADCB201006D069A /* NSUserDefaults+DemoSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+DemoSettings.m"; path = "IMUI/JSQDemo/NSUserDefaults+DemoSettings.m"; sourceTree = "<group>"; };
+		A63085F01ADCB28D006D069A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = IMUI/JSQDemo/Images.xcassets; sourceTree = "<group>"; };
+		A63085F21ADCB355006D069A /* DemoMessagesViewController+XMPPDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DemoMessagesViewController+XMPPDemo.h"; path = "IMUI/JSQDemo/DemoMessagesViewController+XMPPDemo.h"; sourceTree = "<group>"; };
+		A63085F31ADCB355006D069A /* DemoMessagesViewController+XMPPDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DemoMessagesViewController+XMPPDemo.m"; path = "IMUI/JSQDemo/DemoMessagesViewController+XMPPDemo.m"; sourceTree = "<group>"; };
 		A6628E411AD5299B00EA158B /* XMPPAnonymousAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPAnonymousAuthentication.h; sourceTree = "<group>"; };
 		A6628E421AD5299B00EA158B /* XMPPAnonymousAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPAnonymousAuthentication.m; sourceTree = "<group>"; };
 		A6628E441AD5299B00EA158B /* XMPPDeprecatedDigestAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPDeprecatedDigestAuthentication.h; sourceTree = "<group>"; };
@@ -580,9 +594,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A63085E51ADCAEB3006D069A /* IMUI */ = {
+			isa = PBXGroup;
+			children = (
+				A63085EF1ADCB22E006D069A /* Demo */,
+			);
+			name = IMUI;
+			sourceTree = "<group>";
+		};
+		A63085EF1ADCB22E006D069A /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				A63085F01ADCB28D006D069A /* Images.xcassets */,
+				A63085EC1ADCB201006D069A /* NSUserDefaults+DemoSettings.h */,
+				A63085ED1ADCB201006D069A /* NSUserDefaults+DemoSettings.m */,
+				A63085E61ADCAEFD006D069A /* DemoMessagesViewController.h */,
+				A63085E71ADCAEFD006D069A /* DemoMessagesViewController.m */,
+				A63085E81ADCAEFD006D069A /* DemoModelData.h */,
+				A63085E91ADCAEFD006D069A /* DemoModelData.m */,
+				A63085F21ADCB355006D069A /* DemoMessagesViewController+XMPPDemo.h */,
+				A63085F31ADCB355006D069A /* DemoMessagesViewController+XMPPDemo.m */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
 		A637198E1ACCE436009F5D0E /* XMPP */ = {
 			isa = PBXGroup;
 			children = (
+				A662903C1AD52B3100EA158B /* XMPPFramework.h */,
 				A6628E3E1AD5299B00EA158B /* XMPP */,
 			);
 			name = XMPP;
@@ -1503,7 +1542,7 @@
 		A6E3F8CE1ACB93CD00763E1E = {
 			isa = PBXGroup;
 			children = (
-				A662903C1AD52B3100EA158B /* XMPPFramework.h */,
+				A63085E51ADCAEB3006D069A /* IMUI */,
 				A686B3401AD503BC00E26B9A /* IMDataModel */,
 				A637198E1ACCE436009F5D0E /* XMPP */,
 				A6E3F8D91ACB93CD00763E1E /* Connect */,
@@ -1652,6 +1691,7 @@
 				A662903A1AD5299C00EA158B /* build-libidn.sh in Resources */,
 				A6E3F8E91ACB93CD00763E1E /* Main.storyboard in Resources */,
 				A6E3F8EE1ACB93CD00763E1E /* LaunchScreen.xib in Resources */,
+				A63085F11ADCB28D006D069A /* Images.xcassets in Resources */,
 				A66290351AD5299C00EA158B /* README.txt in Resources */,
 				A6E3F8EB1ACB93CD00763E1E /* Images.xcassets in Resources */,
 			);
@@ -1751,6 +1791,7 @@
 				A6628FFA1AD5299B00EA158B /* TURNSocket.m in Sources */,
 				A66290111AD5299B00EA158B /* XMPPMessage+XEP_0184.m in Sources */,
 				A6628FC01AD5299B00EA158B /* XMPPParser.m in Sources */,
+				A63085EA1ADCAEFD006D069A /* DemoMessagesViewController.m in Sources */,
 				A662901E1AD5299B00EA158B /* XMPPMessage+XEP_0224.m in Sources */,
 				A6628FF81AD5299B00EA158B /* XMPPIQ+XEP_0060.m in Sources */,
 				A66290221AD5299C00EA158B /* XMPPMessage+XEP_0308.m in Sources */,
@@ -1772,6 +1813,7 @@
 				A6E88E5C1ADB94A200D3A038 /* XMPPIMUser.m in Sources */,
 				A6628FC81AD5299B00EA158B /* XMPPGoogleSharedStatus.m in Sources */,
 				A66290311AD5299C00EA158B /* DDTTYLogger.m in Sources */,
+				A63085F41ADCB355006D069A /* DemoMessagesViewController+XMPPDemo.m in Sources */,
 				A662901B1AD5299B00EA158B /* NSXMLElement+XEP_0203.m in Sources */,
 				A6628FE61AD5299B00EA158B /* XMPPMessage+XEP0045.m in Sources */,
 				A6628FDC1AD5299B00EA158B /* XMPPRoomCoreDataStorage.m in Sources */,
@@ -1821,6 +1863,7 @@
 				A662900F1AD5299B00EA158B /* XMPPMessage+XEP_0172.m in Sources */,
 				A66290361AD5299C00EA158B /* NSString+DDXML.m in Sources */,
 				A6628FDE1AD5299B00EA158B /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
+				A63085EB1ADCAEFD006D069A /* DemoModelData.m in Sources */,
 				A6628FD41AD5299B00EA158B /* XMPPSystemInputActivityMonitor.m in Sources */,
 				A6628FBA1AD5299B00EA158B /* XMPPConstants.m in Sources */,
 				A6628FF91AD5299B00EA158B /* XMPPPubSub.m in Sources */,
@@ -1851,6 +1894,7 @@
 				A66290021AD5299B00EA158B /* XMPPTransports.m in Sources */,
 				A66290141AD5299B00EA158B /* XMPPStreamManagementMemoryStorage.m in Sources */,
 				A6628FD31AD5299B00EA158B /* XMPPRoster.m in Sources */,
+				A63085EE1ADCB201006D069A /* NSUserDefaults+DemoSettings.m in Sources */,
 				A6E3F8DD1ACB93CD00763E1E /* main.m in Sources */,
 				A6628FE11AD5299B00EA158B /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
 				A6628FB61AD5299B00EA158B /* XMPPXOAuth2Google.m in Sources */,

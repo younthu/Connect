@@ -18,14 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.LoginManager = [[XMPPLoginManager alloc]init];
-    self.loginManager.server = @"cache.qinmaohao.com";
-//    self.loginManager.port =o
-    [self.loginManager LoginUser:@"test2@cache.qinmaohao.com" password:@"111111" success:^{
-        NSLog(@"Login success!");
-    } failure:^(NSError *error) {
-        NSLog(@"*** Login failed:%@", error);
-    }];
+
     return YES;
 }
 

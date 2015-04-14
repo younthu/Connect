@@ -10,9 +10,13 @@
 #import "BlockTypes.h"
 
 @class IMMessage;
+@class IMUser;
 
-@interface XMPPIMConnection : IMConnection
+@interface XMPPIMConnection : NSObject
 
 #pragma mark - extended methods
+
+// TODO: remove this method
 - (void)onMessageReceived:(IMMessage*)IMMessage;
+- (IMUser*)loginUser:(NSString*)userId password:(NSString*)password success:(void (^)())success failure:(void (^)())failure;
 @end
